@@ -12,7 +12,7 @@ HTML
   * add the class 'section-overlay' to the sections. 
   * add data-title and data-content attributes to the sections
 
-~~~
+~~~HTML
     <!-- This section does not have the class section-overlay, so it will not receive an overlay -->
     <div class="section">
         <img src="https://placehold.it/700x500">
@@ -42,7 +42,7 @@ After including overlay.js in your application you can instantiate it with the d
 ~~~
 
 You can also customize the settings by passing in an object with any or all of the following settings:
-~~~
+~~~JS
     var settings = {
       fadeSpeed: 'slow',            // can be string 'fast', 'slow', or a number of ms (such as 400)
       fadeToOpacity: 0,             // 0 - 1 (.5 is valid, etc)
