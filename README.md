@@ -3,7 +3,8 @@
 Notes
 ------------
 
-Demo at https://jsfiddle.net/4Lvwkdhn/2/
+Demo at https://jsfiddle.net/rd9bnnkf/embedded/result/
+Demo source at https://jsfiddle.net/rd9bnnkf/
 
 Requires waypoints JS (https://github.com/imakewebthings/waypoints/blob/master/lib/jquery.waypoints.min.js)
 
@@ -48,6 +49,7 @@ You can also customize the settings by passing in an object with any or all of t
       fadeToOpacity: 0,             // 0 - 1 (.5 is valid, etc)
       overlayIdprefix: 'overlay',   // id prefix for the overlay (this will evaluate overlay0, overlay1, etc)
       overlayClass: 'overlay',      // this class will be added to each overlay
+      overlayWidth: 'full',         // 'full' results in page width overlay, 'partial' will make overlay the width of parent element
       sectionIdprefix: 'section',   // each of the parent section will get an id (this will evaluate section0, section1, etc)
       callback: functionName()      // function that will be called after fadeOut
     }
