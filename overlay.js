@@ -4,20 +4,22 @@ if (typeof(app) === 'undefined' ) {
 }
 
 app.overlay = {
-    init : function(settings){
+    defaultSettings : {
+        fadeSpeed: 'slow',
+        fadeToOpacity: 0,
+        overlayIdprefix: 'overlay',
+        overlayClass: 'overlay',
+        sectionIdprefix: 'section'
+    },
+    init : function(userSettings){
         // if settings are passed in, use them
-        if (typeof(settings) != 'undefined') {
-            app.overlay.settings = settings;
+        if (typeof(userSettings) != 'undefined') {
+            //merge the user settings with default settigns
+            app.overlay.settings = $.extend({},userSettings,app.overlay.defaultSettings)
         } 
-        // otherwise create some defaults
+        // otherwise use the defaults
         else {
-            app.overlay.settings = {
-                fadeSpeed: 'slow',
-                fadeToOpacity: 0,
-                overlayIdprefix: 'overlay',
-                overlayClass: 'overlay',
-                sectionIdprefix: 'section'
-            }
+            app.overlay.settings = app.overlay.defaultSettings;
         }
         $(document).ready(function(){
             app.overlay.overlaySetUp();
@@ -73,15 +75,3 @@ app.overlay = {
     }
   
 }
-
-// set section heights to window height
-$('.section').css("height", window.innerHeight);
-
-//if cookie exists hide overlays otherwise create cookie
-if (document.cookie.indexOf("visited") >= 0) {
-    $('.overlay').css("display","none");
-} else {
-    document.cookie = "visited=true";
-}
-
-app.overlay.init();
