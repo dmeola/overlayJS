@@ -20,6 +20,7 @@ After including overlay.js in your application you can instantiate it with the d
     app.overlay.init();
     
 You can also customize the settings by passing in an object with any or all of the following settings:
+~~~
     var settings = {
       fadeSpeed: 'slow',            // can be string 'fast', 'slow', or a number of ms (such as 400)
       fadeToOpacity: 0,             // 0 - 1 (.5 is valid, etc)
@@ -30,3 +31,4 @@ You can also customize the settings by passing in an object with any or all of t
     }
     
     app.overlay.init(settings);
+~~~
