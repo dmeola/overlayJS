@@ -17,8 +17,10 @@ HTML
 JS
 -------------
 After including overlay.js in your application you can instantiate it with the default settings like so:
+~~~
     app.overlay.init();
-    
+~~~
+
 You can also customize the settings by passing in an object with any or all of the following settings:
 ~~~
     var settings = {
