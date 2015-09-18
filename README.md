@@ -13,12 +13,12 @@ HTML
   * add data-title and data-content attributes to the sections
 
 ~~~
-    \<\!\-\- This section does not have the class section-overlay, so it will not receive an overlay \-\-\>
+    <!-- This section does not have the class section-overlay, so it will not receive an overlay -->
     <div class="section">
         <img src="https://placehold.it/700x500">
     </div>
     
-    \<\!\-\- The following sections have the class section-overlay, so they will receive an overlay \-\-\>
+    <!-- The following sections have the class section-overlay, so they will receive an overlay -->
     <div class="section section-overlay" data-title = "title 2" data-content = "content 2">
         <img src="https://placehold.it/700x500">
     </div>
