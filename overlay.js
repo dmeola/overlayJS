@@ -4,18 +4,22 @@ if (typeof(app) === 'undefined' ) {
 }
 
 app.overlay = {
+    // some default settings which can be overridden during instantiation
     defaultSettings : {
         fadeSpeed: 'slow',
         fadeToOpacity: 0,
         overlayIdprefix: 'overlay',
         overlayClass: 'overlay',
+        overlayWidth: 'full',
         sectionIdprefix: 'section'
     },
+    
+    // set settings and initalize overlay and waypoint set up
     init : function(userSettings){
         // if settings are passed in, use them
         if (typeof(userSettings) != 'undefined') {
             //merge the user settings with default settigns
-            app.overlay.settings = $.extend({},userSettings,app.overlay.defaultSettings)
+            app.overlay.settings = $.extend({},app.overlay.defaultSettings,userSettings)
         } 
         // otherwise use the defaults
         else {
@@ -46,7 +50,23 @@ app.overlay = {
             $('#section' + index).append( $overlay );
         });
         
-        $('.overlay').css("height", $(this).parent().css('height'));
+        // set overlay to full width of page, and height of parent section if overlayWidth=full
+        if (app.overlay.settings.overlayWidth === 'full') {
+            
+            $.each($('.overlay'), function() { 
+                var offset = $(this).offset();
+                var parentHeight = $(this).parent().css('height');
+                var $thisOverlay = $(this);
+                $thisOverlay.offset({
+                    top: offset.top, 
+                    left: 0
+                });
+                $thisOverlay.css({
+                    width : window.innerWidth,
+                    height : parentHeight
+                });
+            });
+        }
     },
         
     // set up waypoints to trigger fade
