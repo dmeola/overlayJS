@@ -1,8 +1,5 @@
 # overlayJS
 
-overlay JS
-============
-
 Notes
 ------------
 
@@ -12,7 +9,30 @@ Requires waypoints JS (https://github.com/imakewebthings/waypoints/blob/master/l
 
 HTML
 -------------
+  * add the class 'section-overlay' to the sections. 
+  * add data-title and data-content attributes to the sections
 
+~~~
+    \<\!\-\- This section does not have the class section-overlay, so it will not receive an overlay \-\-\>
+    <div class="section">
+        <img src="https://placehold.it/700x500">
+    </div>
+    
+    \<\!\-\- The following sections have the class section-overlay, so they will receive an overlay \-\-\>
+    <div class="section section-overlay" data-title = "title 2" data-content = "content 2">
+        <img src="https://placehold.it/700x500">
+    </div>
+    
+    <div class="section section-overlay" data-title = "title 3" data-content = "content 3">
+        <img src="https://placehold.it/700x500">
+    </div>
+    
+    <div class="section section-overlay" data-title = "title 4" data-content = "content 4">
+        <img src="https://placehold.it/700x500">
+    </div>
+~~~
+  
+  
 
 JS
 -------------
