@@ -54,3 +54,16 @@ You can also customize the settings by passing in an object with any or all of t
     
     app.overlay.init(settings);
 ~~~
+
+Run once
+
+If you only want the overlay to show on the first visit, you can use a cookie:
+~~~JS
+ //if cookie exists hide overlays otherwise create cookie
+ if (document.cookie.indexOf("visited") >= 0) {
+     $('.overlay').css("display","none");
+ } else {
+     document.cookie = "visited=true";
+ }
+~~~
+
