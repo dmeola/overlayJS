@@ -3,8 +3,8 @@
 Notes
 ------------
 
-Demo at https://jsfiddle.net/rd9bnnkf/embedded/result/
-Demo source at https://jsfiddle.net/rd9bnnkf/
+Demo at https://jsfiddle.net/fx7zjohc/embedded/result/
+Demo source at https://jsfiddle.net/fx7zjohc/
 
 Requires waypoints JS (https://github.com/imakewebthings/waypoints/blob/master/lib/jquery.waypoints.min.js)
 
